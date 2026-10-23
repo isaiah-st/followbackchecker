@@ -1,0 +1,6 @@
+# never commit an Instagram export or follower lists
+*.zip
+followers*.json
+following.json
+*.html
+!index.html

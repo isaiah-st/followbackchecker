@@ -1,0 +1,82 @@
+/* simple and tidy: one white card on a light grey page */
+[hidden] { display: none !important; }
+* { box-sizing: border-box; }
+
+body {
+  max-width: 760px;
+  margin: 32px auto;
+  padding: 0 16px;
+  background: #f2f3f5;
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif, Carlito, "Segoe UI", sans-serif;   /* Carlito: free look-alike on machines without Calibri */
+  font-size: 17px;
+  line-height: 1.5;
+}
+/* form controls don't pick up the page font on their own */
+button, input, select { font: inherit; }
+
+.card {
+  background: #fff;
+  border: 1px solid #dcdfe4;
+  border-radius: 8px;
+  padding: 24px 28px;
+}
+h1 { margin: 0 0 4px; font-size: 1.8em; }
+h2 { margin: 24px 0 8px; font-size: 1.2em; }
+.muted { color: #5f6368; }   /* 6:1 on white */
+.foot { text-align: center; color: #5f6368; }
+
+/* upload box */
+.drop {
+  display: block;
+  border: 2px dashed #b0b6bf;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 8px 0 12px;
+  background: #fafbfc;
+  cursor: pointer;
+}
+.drop input { margin-top: 8px; }
+.drop.over { border-color: #1a73e8; background: #eef4fd; }
+details { margin-top: 8px; }
+summary { cursor: pointer; }
+details ol { margin: 8px 0 0; }
+
+/* buttons and fields */
+button, ::file-selector-button {
+  font: inherit;
+  padding: 6px 14px;
+  border: 1px solid #c6cbd2;
+  border-radius: 6px;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+}
+::file-selector-button { margin-right: 10px; }
+button:hover, ::file-selector-button:hover { background: #f1f3f5; }
+button:disabled { opacity: .5; cursor: default; }
+input[type="search"], select {
+  padding: 6px 10px;
+  border: 1px solid #c6cbd2;
+  border-radius: 6px;
+  background: #fff;
+}
+button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+.status { margin: 12px 0 0; }
+.status:empty { display: none; }
+.status.error { color: #b00020; }
+
+/* the three lists */
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tabs button[aria-pressed="true"] { background: #1a73e8; border-color: #1a73e8; color: #fff; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.toolbar label { display: flex; align-items: center; gap: 6px; }
+
+#list { margin: 0; padding-left: 2.2em; }
+#list li { padding: 6px 0; border-bottom: 1px solid #eceef1; }
+#list a { color: #1a5fc4; }
+#list .when { color: #5f6368; font-size: 0.85em; margin-left: 8px; }
